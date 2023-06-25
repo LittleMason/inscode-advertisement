@@ -1,11 +1,27 @@
-<script setup></script>
+<script setup>
+import { ref } from 'vue';
+const navigates = ['活动介绍','活动安排','奖项设置','报名流程'];
+const navigateActive = ref(0);
+const handleNavigate = (index) => {
+  navigateActive.value = index
+}
+</script>
 
 <template>
   <div class="advertise-container">
     <div class="content">
+      <div class="border-common navigate sm:hidden xl:block">
+        <div class="navigate-content">
+          <div :class="{'active':navigateActive===index}" v-for="(item,index) in navigates" :key="index" @click="handleNavigate(index)">
+            <a href="#">{{item}}</a>
+          </div>
+        </div>
+      </div>
       <div class="border-common">
         <div class="introduce">
-          <div class="introduce-title"></div>
+          <div class="introduce-title">
+            活动<br/>介绍
+          </div>
           <div class="introduce-content">
             <div class="introduce-content-paragraph">
               InsCode是一个集成了在线IDE、在线AI编程、在线大模型训练以及SD
@@ -17,7 +33,7 @@
             <div class="mb-5 introduce-content-paragraph">
               同时，四期全部参与的小伙伴，还会自动参与最终奖项的评选，如果您四期全部参与，且被评选后进入最终榜单，还会有神秘大奖哦～
             </div>
-            <div class="introduce-content-paragraph blue f-18 indent-0">
+            <div class="mb-2 introduce-content-paragraph blue f-18 indent-0">
               活动参与对象
             </div>
             <div class="introduce-content-paragraph indent-0">
@@ -114,7 +130,7 @@
             奖项设置
           </div>
           <div class="setting-content">
-            <div class="grid gap-5 mb-4 xl:grid-cols-4 md:grid-cols-2 sm:grid-cols-2">
+            <div class="grid gap-5 mb-4 xl:grid-cols-4 md:grid-cols-4 sm:grid-cols-2">
                 <div class="setting-content-item">
                   <img src="./assets/1.png" alt="" />
                 </div>
@@ -183,7 +199,10 @@
         </div>
       </div>
     </div>
-    <div class="footer"></div>
+    <div class="footer">
+      <div class="mr-6 footer-button">我是按钮</div>
+      <div class="footer-button">我是按钮</div>
+    </div>
   </div>
 </template>
 
@@ -257,6 +276,7 @@
   background-image: url(./assets/banner1.png);
   background-repeat: no-repeat;
   background-size: 100% auto;
+  background-color: rgba(195, 233, 255, 1);
   min-height: 100vh;
   position: relative;
   font-family: SourceHanSansCN-Medium, SourceHanSansCN;
@@ -264,20 +284,54 @@
   .content {
     max-width: 1200px;
     margin: 0 auto;
-    padding-top: 50px;
+    padding: 0 20px;
+    padding-top: 17%;
+    position: relative;
+    .navigate{
+      font-size: @font18;
+      font-family: SourceHanSansCN-Medium, SourceHanSansCN;
+      font-weight: 500;
+      color: #999999;
+      text-align: center;
+      position: absolute;
+      z-index: 99;
+      right: 0;
+      transform: translate(120%,0);
+      border-radius: 22px;
+      &-content{
+        border-radius: 22px;
+        padding: 10px 0;
+        &>div{
+          border-bottom: 1px solid #ccc;
+          padding: 10px;
+          &.active{
+            .blue;
+            font-weight: bold;
+          }
+          &:last-child{
+            border: none;
+          }
+        }
+      }
+    }
     .introduce {
       &-title {
-        background-image: url(./assets/introduce.png);
-        background-size: cover;
-        width: @introduceW;
-        height: @introduceW;
+        background-color: #77A1F7;
+        color: transparent;
+        font-size: 60px;
+        font-weight: bold;
+        -webkit-text-stroke: 1px #fff; /* 设置镂空效果 */
         position: absolute;
-        right: 20px;
+        right: 40px;
         top: 0;
         transform: translate(0, -30%);
+        border-radius: 44px;
+        padding: 20px;
+        padding-left: 30px;
+        letter-spacing: 10px;
       }
       &-content {
-        padding-right: @introduceW + 20px;
+        padding-right: @introduceW + 10px;
         &-paragraph {
           text-indent: @fontSize * 2;
         }
@@ -373,6 +427,19 @@
     background: #ffffff;
     box-shadow: 0px 2px 20px 0px rgba(55, 165, 202, 0.35);
     border-radius: 44px 44px 0px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &-button{
+      background: linear-gradient(180deg, #AFCFFC 0%, #3A7BFF 100%);
+      box-shadow: 0px 6px 10px 0px rgba(120,162,247,0.5);
+      border-radius: 32px;
+      padding: 10px 30px;
+      font-family: SourceHanSansCN-Bold, SourceHanSansCN;
+      font-weight: bold;
+      color: #FFFFFF;
+      font-size: 28px;
+    }
   }
 }
 </style>
