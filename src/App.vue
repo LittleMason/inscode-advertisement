@@ -1,6 +1,23 @@
 <script setup>
 import { ref } from 'vue';
-const navigates = ['活动介绍','活动安排','奖项设置','报名流程'];
+const navigates = [
+  {
+    text:'活动介绍',
+    anchor:'#introduce'
+  },
+  {
+    text:'活动安排',
+    anchor:'#arrange'
+  },
+  {
+    text:'奖项设置',
+    anchor:'#setting'
+  },
+  {
+    text:'报名流程',
+    anchor:'#flow'
+  },
+];
 const navigateActive = ref(0);
 const handleNavigate = (index) => {
   navigateActive.value = index
@@ -13,11 +30,11 @@ const handleNavigate = (index) => {
       <div class="border-common navigate sm:hidden xl:block">
         <div class="navigate-content">
           <div :class="{'active':navigateActive===index}" v-for="(item,index) in navigates" :key="index" @click="handleNavigate(index)">
-            <a href="#">{{item}}</a>
+            <a :href="item.anchor">{{item.text}}</a>
           </div>
         </div>
       </div>
-      <div class="border-common">
+      <div class="border-common" id="introduce">
         <div class="introduce">
           <div class="introduce-title">
             活动<br/>介绍
@@ -48,7 +65,7 @@ const handleNavigate = (index) => {
           </div>
         </div>
       </div>
-      <div class="border-common">
+      <div class="border-common" id="arrange">
         <div class="arrange">
           <div class="arrange-title">活动安排</div>
           <div class="arrange-content">
@@ -124,7 +141,7 @@ const handleNavigate = (index) => {
           </div>
         </div>
       </div>
-      <div class="border-common">
+      <div class="border-common" id="setting">
         <div class="setting">
           <div class="setting-title">
             奖项设置
@@ -150,7 +167,7 @@ const handleNavigate = (index) => {
           </div>
         </div>
       </div>
-      <div class="border-common">
+      <div class="border-common" id="flow">
         <div class="flow">
           <div class="flow-title">报名及参赛流程</div>
           <div class="flow-content">
@@ -281,6 +298,7 @@ const handleNavigate = (index) => {
   position: relative;
   font-family: SourceHanSansCN-Medium, SourceHanSansCN;
   font-size: @fontSize;
+  padding-bottom: 150px;
   .content {
     max-width: 1200px;
     margin: 0 auto;
@@ -293,10 +311,10 @@ const handleNavigate = (index) => {
       font-weight: 500;
       color: #999999;
       text-align: center;
-      position: absolute;
+      position: fixed;
       z-index: 99;
-      right: 0;
-      transform: translate(120%,0);
+      right: 14%;
+      top: 340px;
       border-radius: 22px;
       &-content{
         border-radius: 22px;
@@ -430,6 +448,9 @@ const handleNavigate = (index) => {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: fixed;
+    bottom: 0;
+    z-index: 100;
     &-button{
       background: linear-gradient(180deg, #AFCFFC 0%, #3A7BFF 100%);
       box-shadow: 0px 6px 10px 0px rgba(120,162,247,0.5);
