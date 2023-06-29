@@ -25,9 +25,13 @@
     /* 计算rem */
     function autoRootFontSize() {
       //(当前屏幕宽度，最小宽度为1200)/1920*16px
-      let setSize = Math.max(document.documentElement.getBoundingClientRect().width,1200) / 2000 * 16;  
-      //字体默认最大值为16px
-      document.documentElement.style.fontSize = (setSize > 16 ? 16 : setSize) + 'px';
+      if(document.documentElement.getBoundingClientRect().width > 1200) {
+        document.documentElement.style.fontSize =null;
+      }else{
+        let setSize = Math.max(document.documentElement.getBoundingClientRect().width,1200) / 2000 * 16;  
+        //字体默认最大值为16px
+        document.documentElement.style.fontSize = (setSize > 16 ? 16 : setSize) + 'px';
+      }
     }
     window.addEventListener('resize', autoRootFontSize);
     autoRootFontSize();
