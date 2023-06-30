@@ -122,8 +122,7 @@ const previewVisible = ref(false);
           <div class="introduce-title-mobile sm:block md:hidden">活动介绍</div>
           <div class="introduce-content">
             <div class="introduce-content-paragraph">
-              InsCode是一个集成了在线IDE、在线AI编程、在线大模型训练以及SD
-              模型使用的综合代码开发平台。不论你是初级软件工程师，还是AI大模型爱好者，InsCode都能帮助你快速编写代码，运行项目。甚至在这里你还可以一键购买算力，训练大模型，开发自己的AI应用程序。
+              InsCode是一个集成了在线IDE、在线AI编程、在线算力租赁、在线项目部署以及在线SD 模型使用的综合代码开发平台。不论你是初级软件工程师，还是AI大模型爱好者，InsCode都能帮助你快速编写代码，运行项目。甚至在这里你还可以一键购买算力，训练大模型，开发自己的AI应用程序。
             </div>
             <div class="introduce-content-paragraph">
               现我们真诚地邀请您来参加InsCode试用评测活动，本次试用测评活动主要分为四期，每一期都有丰厚的奖品等你来拿～
@@ -142,7 +141,7 @@ const previewVisible = ref(false);
               <div class="arrange-content-first-title sm:hidden md:flex">
                 <div class="arrange-content-first-title-item">第一期</div>
                 <div class="arrange-content-first-title-item">
-                  在线试用stable diffusion 模型生成优质人物好图
+                  在线试用Stable Diffusion 模型生成优质人物好图
                 </div>
                 <div class="arrange-content-first-title-item">
                   2023-07-03 开始
@@ -150,7 +149,7 @@ const previewVisible = ref(false);
                 <div class="arrange-content-first-title-item">周期14天</div>
               </div>
               <div class="arrange-content-first-title sm:block md:hidden" style="font-size: 14px;padding:10px">
-                 <div>第一期：在线试用 stable diffusion 模型生成优质人物好图</div>
+                 <div>第一期：在线试用 Stable Diffusion 模型生成优质人物好图</div>
                  <div><span style="margin-right:10px">2023-07-03 开始</span><span>周期25天</span></div>
               </div>
               <div
@@ -229,8 +228,8 @@ const previewVisible = ref(false);
               </div>
             </div>
             <div>
-              <div>注：1. 算力资源发放会在评奖后立即开启，不可暂停或累计，获奖的小伙伴请及时到<a class="blue" href="https://inscode.csdn.net/templates">算力页</a>畅玩大模型哦</div>
-              <div style="padding-left: 28px;">2. 每参加一期活动，勋章自动升级，四期全部参加，即可获取InsCode小能手终极勋章</div>
+              <div class="annotation-line">注：1. 算力资源发放会在评奖后立即开启，不可暂停或累计，获奖的小伙伴请及时到<a class="blue" href="https://inscode.csdn.net/@inscode/Stable-Diffusion">算力页</a>畅玩大模型哦</div>
+              <div class="annotation-line">2. 每参加一期活动，勋章自动升级，四期全部参加，即可获取InsCode小能手终极勋章</div>
             </div>
           </div>
         </div>
@@ -243,20 +242,19 @@ const previewVisible = ref(false);
               第一步：选择SD模型试玩
             </div>
             <div class="mb-6 flow-content-title">
-              到InsCode的 <a href="https://inscode.csdn.net/@inscode/Stable-Diffusion">Stable Diffusion模板</a>选择SD模型在线试玩，生成满意的人物图片。如果不会使用模型的，可参考<a href="https://devpress.csdn.net/inscode/6492a77a7846f97eafea48e3.html">《如何使用SD模板生成图片》</a>查看试玩教程 
+              到InsCode的 <a href="https://inscode.csdn.net/@inscode/Stable-Diffusion">Stable Diffusion模板</a>运行及使用 SD 模型，生成满意的人物图片。如果不会使用模型的，可参考<a href="https://devpress.csdn.net/inscode/6492a77a7846f97eafea48e3.html">《如何使用SD模板生成图片》</a><a href="https://devpress.csdn.net/inscode/649aa855187b2e3b840b46b5.html">《如何给SD安装lora》</a>查看试玩教程 
             </div>
             <div class="mb-1 flow-content-step-title">
-              第二步：发布博客
+              第二步：发布博客即刻参与活动
             </div>
             <div class="mb-6 flow-content-title">
-              在CSDN选择对应活动发布博客，要求：
+              活动博客参考案例 <a href="https://blog.csdn.net/2301_76740037/article/details/131332427">《可爱的头像【 InsCode Stable Diffusion 美图活动一期】》</a>， 详细要求：
               <ol class="list-decimal list-inside">
-                <li>博客标题必须包含关键词：“InsCode Stable Diffusion 美图活动一期”（参赛标识，必须引入），标题形式可参考【InsCode Stable Diffusion 美图活动一期-XXXX】"(其中 “XXXXX”为自定义标题名称， 如 “二次元少女”，“森领奇幻钢琴家“等等</li>
-                <li>文章内容必须包含：在线运行地址（统一为<a href="https://inscode.csdn.net/@inscode/Stable-Diffusion">https://inscode.csdn.net/@inscode/Stable-Diffusion</a>）、模型相关版本和参数配置、图片生成提示词和反向提示词、种子和对应的图片</li>
-                <li>发布的必须是InsCode上SD模型产出的人物图片 （最终进入榜单的小伙伴，我们会对生成的图片进行再次核验其生成的真实性 ）</li>
-                <li>提交博客时文章标签需添加： stable diffusion，将生成的图片作为封面图，选择参加的活动 “ Stable Diffusion 美图活动一期”  <span class="cursor-pointer blue" @click="previewVisible = true">点击查看示例</span></li>
+                <li>标题：含有关键词：“InsCode Stable Diffusion 美图活动一期”，可参考【XXXX-InsCode Stable Diffusion 美图活动一期】(其中 “XXXXX”为自定义标题名称， 如 “二次元少女”，“森领奇幻钢琴家“等等</li>
+                <li>正文：必须包含在线运行地址（统一为https://inscode.csdn.net/@inscode/Stable-Diffusion）、模型相关版本和参数配置、图片生成提示词和反向提示词、种子和对应的图片</li>
+                <li>最后：提交博客时文章标签需添加“Stable Diffusion”，将生成的图片作为封面图，选择参加的活动 “ Stable Diffusion 美图活动一期” （一定要选择此活动才可进入活动评选哦~）<span class="cursor-pointer blue" @click="previewVisible = true">点击查看示例</span></li>
               </ol>
-              以上，可参考 <a href="https://blog.csdn.net/2301_76740037/article/details/131332427">《参赛博客案例》</a>
+              备注：发布的必须是InsCode上SD模型产出的人物图片 （最终进入榜单的小伙伴，我们会对生成的图片进行再次核验其生成的真实性 ）
             </div>
             <div class="mb-1 flow-content-step-title">
               第三步：官方评选
@@ -267,7 +265,10 @@ const previewVisible = ref(false);
                 InsCode小助手 
                 <span v-show="QRCodeVisible" class="qr-box-pc">
                   <img class="mb-2" src="./assets/QR_code.png" alt="">
-                  <span class="inline-flex items-center blue"><img src="./assets/robot.png" alt="" class="robot-logo">InsCode小助手</span>
+                  <div class="flex items-center justify-center blue" style="height: 32px;">
+                    <img src="./assets/robot.png" alt="" class="robot-logo">
+                    <div>InsCode小助手</div> 
+                  </div>
                 </span>
               </span>
               <div class="qr-box-mobile" v-show="QRCodeMobileVisible">
@@ -281,59 +282,57 @@ const previewVisible = ref(false);
             </div>
             <div class="mb-3 flow-content-blue">评选规则：</div>
             <div class="mb-3">
-              由评选委员会根据博主产出的参赛贴和SD模型生成的图片质量情况给予打分评选:
+              由CSDN根据博主产出的参赛贴和SD模型生成的图片质量情况给予打分评选:
             </div>
             <div class="indent2f">
-              1.博文传播影响力占比 40%
+              1.博文传播影响力 占比40%
             </div>
             <div class="mb-1 indent4f">
-              <div>a.站外发布该活动博客 20分（比如 掘金、知乎、V2EX、1024Code等开发者社区，每在一个社区发布得5分，满分20分）ps. 博主需要把在其他平台发布的帖子提交在参加活动的博客评论中，以方便工作人员进行积分统计</div>
+              <div>a.站外发布该活动博客 20分（比如 掘金、知乎、V2EX、SegmentFault、OSChina等开发者社区，每在一个社区发布得5分，满分20分）ps. 博主需要把在其他平台发布的帖子提交在参加活动的博客评论中，以方便工作人员进行积分统计</div>
               <div>b.帖子点赞量，1个点赞1分，封顶10分</div>
               <div>c.帖子的评论量，1个评论1分，封顶10分 （除作者本人自己的评论）</div>
             </div>
             <div class="indent2f">
-              2.发布博文内容的质量 30%
+              2.发布博文内容的质量 占比30%
             </div>  
             <div class="mb-1 indent4f">
               <div>是否有详细的模型使用介绍 20分</div>
               <div>是否有对模型的深度使用 10分（比如 使用了Lora，VAE等能力）</div>
             </div>
             <div class="indent2f">
-              3.生成图片的质量和个数 30%
+              3.生成图片的质量和个数 占比30%
             </div>  
-            <div class="mb-3 indent4f">
-              <div>a.图片的美观程度、新颖性、质感、清晰度等等</div>
-              <div>b.生成图片的个数 ，1张图1分， 总分10分封顶</div>
+            <div class="mb-6 indent4f">
+              <div>a.图片的美观程度、新颖性、质感、清晰度等等 20分</div>
+              <div>b.生成图片的个数 ，1张图2分， 总分10分封顶</div>
             </div>
-            <div class="mb-6">备注：图片的美观程度、新颖性、质感、清晰度评选，需要内部邀请1名设计师，4名内部运营人员参与打分，最终取5位的平均分作为 3.a的分数。</div>
             
             <div class="mb-3 flow-content-blue">领奖规则：</div>
-            <div>1、获奖名单会在该评选结束后在该页面公布。</div>
+            <div>1.获奖名单会在评选结果公布日期，即7月21日在该页面公布。</div>
             <div>
-              2、工作人员将在活动结束后的7个工作日内，通过CSDN私信联系中奖用户，进行发奖，请您注意消息通知。
+              2.工作人员将在活动结束后的7个工作日内，通过CSDN私信联系中奖用户，进行发奖，请您注意消息通知（私信联系后1周内未回复则取消奖项视为自动放弃）。
             </div>
             <div class="mb-6">
-              3、除参与奖外，获奖人员，领奖时需实名认证，1
+              3.除参与奖外，获奖人员，领奖时需实名认证，1
               个实名认证用户同一期内仅可领取1份奖项哦～
             </div>
             <div class="mb-3 flow-content-blue">其它说明：</div>
             <div>
               本次活动面向全社会开放，个人、高等院校、科研单位、企业等人员均可报名参加。（如有活动主办方和技术支持单位参加活动，则自动放弃获奖资格。）<br/>
-              若出现以下情况，将视为违规，活动组委会有权取消用户参与资格及获得的奖项。
+              若出现以下情况，将视为违规，CSDN有权取消用户参与资格及获得的奖项，如奖金或相关权益已经发放，CSDN有权要求用户返还奖金并收回相关权益，如给CSDN造成损失的，由用户承担相关责任。
             </div>
-            <div>1、活动报名信息虚假，或不符合活动报名要求的参与者。</div>
-            <div>2、活动参与文章涉嫌抄袭，侵犯他人知识产权等行为。</div>
+            <div>1.活动报名信息虚假，或不符合活动报名要求的参与者。</div>
+            <div>2.活动参与文章涉嫌抄袭，侵犯他人知识产权等行为。</div>
             <div>
-              3、活动参与作品或文章发现或被举报认定存在的其他违法、违规行为。
+              3.活动参与作品或文章发现或被举报认定存在的其他违法、违规行为。
             </div>
-            <div>法律允许范围内的，最终解释权归InsCode所有。</div>
           </div>
         </div>
       </div>
     </div>
     <div class="footer">
-      <div class="mr-6 footer-button"><a href="https://inscode.csdn.net/@inscode/Stable-Diffusion">试玩SD模型</a></div>
-      <div class="footer-button"><a href="https://activity.csdn.net/creatActivity?id=10496">发布测评博客</a></div>
+      <div class="mr-6 footer-button"><a href="https://inscode.csdn.net/@inscode/Stable-Diffusion">第一步：试用SD模型</a></div>
+      <div class="footer-button"><a href="https://activity.csdn.net/creatActivity?id=10496">第二步：发布博客</a></div>
     </div>
   </div>
 </template>
@@ -366,7 +365,7 @@ const previewVisible = ref(false);
     &-content{
       padding: 24px;
       background: #FFFFFF;
-      border-radius: 4px;
+      border-radius: 12px;
       width: @previewBoxWidth;
       height: @previewBoxHeight;
       &-title{
@@ -395,14 +394,14 @@ const previewVisible = ref(false);
       }
       &-footer{
         text-align: right;
-        margin-top: 24px;
+        margin-top: 45px;
         &-button{
           display: inline-block;
           width: @previewBoxButtonW;
           height: @previewBoxButtonH;
           line-height:@previewBoxButtonH;
           background: #0071FF;
-          border-radius: 18px;
+          border-radius: 100px;
           color: white;
           text-align: center;
         }
@@ -421,7 +420,7 @@ const previewVisible = ref(false);
   .border-common {
     background: #ffffff;
     box-shadow: 0px 2px 20px 0px rgba(55, 165, 202, 0.35);
-    border-radius: 32px;
+    border-radius: 24px;
     padding: @borderCommonPadding;
     overflow: visible;
     margin-bottom: @borderCommonMarginBottom;
@@ -432,7 +431,7 @@ const previewVisible = ref(false);
       rgba(181, 231, 254, 1)
     );
     & > div {
-      border-radius: 32px;
+      border-radius: 22px;
       background: #ffffff;
       padding: 40px 10px;
     }
@@ -466,10 +465,10 @@ const previewVisible = ref(false);
     font-size: @font18;
   }
   .indent2f{
-    padding-left: 2*@fontSize;
+    // padding-left: 2*@fontSize;
   }
   .indent4f{
-    padding-left: 4*@fontSize;
+    // padding-left: 4*@fontSize;
   }
 
   .advertise-container {
@@ -504,20 +503,23 @@ const previewVisible = ref(false);
         z-index: 99;
         right: 234px;
         top: 420px;
-        border-radius: 20px;
+        border-radius: 14px;
         &-content {
-          border-radius: 22px;
+          border-radius: 14px;
           padding: 10px 0;
           & > div {
             border-bottom: 1px solid #e3e3e3;
             padding: 10px;
-            &.active {
+            &>a{
+              color: #999999;
+            }
+            &.active>a{
               .blue;
             }
             &:last-child {
               border: none;
             }
-            &:hover {
+            & > a:hover {
               .blue;
             }
           }
@@ -546,9 +548,14 @@ const previewVisible = ref(false);
           &:last-child {
             border: none;
           }
+          a>{
+            color: rgba(0, 0, 0, 0.5);
+          }
         }
-        .active {
-          .blue;
+        .active{
+          &>a{
+            .blue;
+          }
           background: rgba(255, 255, 255, 0.6);
         }
       }
@@ -589,7 +596,7 @@ const previewVisible = ref(false);
             &-title {
               background-color: rgba(119, 161, 247, 0.3);
               border-radius: 10px;
-              padding: 5px 20px;
+              padding: 10px 20px;
               font-size: @font22;
               font-family: SourceHanSansCN-Medium, SourceHanSansCN;
               font-weight: 500;
@@ -674,6 +681,7 @@ const previewVisible = ref(false);
           height: 32px !important;
           display: inline-block;
           margin-right: 2px;
+          transform: translate(0,-3px);
         }
         .qr-box-mobile{
           position:fixed;
@@ -691,10 +699,6 @@ const previewVisible = ref(false);
             height: 302px;
             background: #FFFFFF;
             border-radius: 12px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
             &-title{
               font-size: 18px;
               font-family: PingFangSC-Medium, PingFang SC;
@@ -702,10 +706,14 @@ const previewVisible = ref(false);
               color: #2774E9;
               width:100%;
               text-align: center;
+              margin-top: 24px;
+              margin-bottom: 22px;
             }
-            img{
+            >img{
               width: 140px;
               height: 140px;
+              margin: 0 auto;
+              margin-bottom: 24px;
             }
             &-button{
               width: 232px;
@@ -716,6 +724,7 @@ const previewVisible = ref(false);
               color:white;
               font-size:16px;
               text-align:center;
+              margin: 0 auto;
             }
           }
         }
@@ -730,7 +739,7 @@ const previewVisible = ref(false);
             color: #000000;
           }
           &-title {
-            font-family: SourceHanSansCN-Medium, SourceHanSansCN;
+            font-family: SourceHanSansCN-Normal, SourceHanSansCN;
             font-weight: 500;
           }
           &-blue {
@@ -772,6 +781,9 @@ const previewVisible = ref(false);
           width: 100%;
           height: 100%;
         }
+        &:last-child{
+          margin-right: 0 !important;
+        }
       }
     }
   }
@@ -803,6 +815,9 @@ const previewVisible = ref(false);
   @previewBoxButtonW:96px;
   @previewBoxButtonH:32px;
   .containermixin(@fontSize,@font18,@font19,@font20,@font22,@introduceW,@titleCommonFontSize,@footerButtonSize,@footerButtonWidth,@footerButtonHeight,@footerButtonSpace,@footerHeight,@titleCommonRadius,@borderCommonMarginBottom,@borderCommonPadding,@firstContentPadding,@customGap,@boxCommonPadding,@titleCommonWidth,@titleCommonHeight,@previewBoxWidth,@previewBoxHeight,@previewBoxButtonW,@previewBoxButtonH);
+  .advertise-container .content .setting .annotation-line:last-child{
+    padding-left: 28px;
+  }
 }
 @media screen and (max-width: 1200px) {
   @fontSize:14px; //基本字体大小
@@ -813,7 +828,7 @@ const previewVisible = ref(false);
   @introduceW:220px; //活动结束宽度
   @titleCommonFontSize:20px; //浮层标题字体大小
   @footerButtonSize:16px;
-  @footerButtonWidth:140px;
+  @footerButtonWidth:162px;
   @footerButtonHeight:40px;
   @footerButtonSpace:24px;
   @footerHeight:64px;
@@ -832,6 +847,12 @@ const previewVisible = ref(false);
   .containermixin(@fontSize,@font18,@font19,@font20,@font22,@introduceW,@titleCommonFontSize,@footerButtonSize,@footerButtonWidth,@footerButtonHeight,@footerButtonSpace,@footerHeight,@titleCommonRadius,@borderCommonMarginBottom,@borderCommonPadding,@firstContentPadding,@customGap,@boxCommonPadding,@titleCommonWidth,@titleCommonHeight,@previewBoxWidth,@previewBoxHeight,@previewBoxButtonW,@previewBoxButtonH);
   .advertise-container .content .arrange{
     padding:40px 10px;
+  }
+  .advertise-container .content .introduce{
+    padding-bottom: 20px;
+  }
+  .advertise-container .content .setting .annotation-line:last-child{
+    padding-left: 0px;
   }
 }
 
