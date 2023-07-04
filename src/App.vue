@@ -1,6 +1,5 @@
 <script setup>
 import { ref, onMounted } from "vue";
-import ImagesView from 'vue-imageview';
 
 const navigates = [
   {
@@ -74,10 +73,10 @@ const previewVisible = ref(false);
       <div class="preview-box-content">
         <div class="preview-box-content-title">
           操作示例
-          <img src="./assets/close@3x.png" alt="" @click="previewVisible=false">
+          <img src="https://csdn-665-inscode.s3.cn-north-1.jdcloud-oss.com/act/close@3x.png/large" alt="" @click="previewVisible=false">
         </div>
         <div class="preview-box-content-title-img-box">
-          <img src="./assets/example@3x.png" alt="">
+          <img src="https://csdn-665-inscode.s3.cn-north-1.jdcloud-oss.com/act/example@3x.png/large" alt="">
         </div>
         <div class="preview-box-content-footer">
           <div class="cursor-pointer preview-box-content-footer-button" @click="previewVisible=false">
@@ -92,15 +91,15 @@ const previewVisible = ref(false);
         :style="{ right: navigatePosition + 'px' }"
       >
         <div class="navigate-content">
+          <template v-for="(item, index) in navigates" :key="index">
           <div
             :class="{ active: navigateActive === index }"
-            v-for="(item, index) in navigates"
-            v-show="item.show"
-            :key="index"
+            v-if="item.show"
             @click="handleNavigate(index)"
           >
             <a :href="item.anchor">{{ item.text }}</a>
           </div>
+        </template>  
         </div>
       </div>
       <div class="navigate-mobile sm:flex xl:hidden">
@@ -117,18 +116,24 @@ const previewVisible = ref(false);
       <div class="border-common" id="introduce">
         <div class="introduce">
           <div class="introduce-title sm:hidden md:block">
-            <img src="./assets/introduce.png" alt="">
+            <img src="https://csdn-665-inscode.s3.cn-north-1.jdcloud-oss.com/act/introduce.png/large" alt="">
           </div>
           <div class="introduce-title-mobile sm:block md:hidden">活动介绍</div>
           <div class="introduce-content">
-            <div class="introduce-content-paragraph">
-              InsCode是一个集成了在线IDE、在线AI编程、在线算力租赁、在线项目部署以及在线SD 模型使用的综合代码开发平台。不论你是初级软件工程师，还是AI大模型爱好者，InsCode都能帮助你快速编写代码，运行项目。甚至在这里你还可以一键购买算力，训练大模型，开发自己的AI应用程序。
+            <div class="introduce-content-text-box">
+              <div class="introduce-content-paragraph">
+                InsCode是一个集成了在线IDE、在线AI编程、在线算力租赁、在线项目部署以及在线SD 模型使用的综合代码开发平台。不论你是初级软件工程师，还是AI大模型爱好者，InsCode都能帮助你快速编写代码，运行项目。甚至在这里你还可以一键购买算力，训练大模型，开发自己的AI应用程序。
+              </div>
+              <div class="introduce-content-paragraph">
+                现我们真诚地邀请您来参加InsCode试用活动，本次试用活动主要分为四期，每一期都有丰厚的奖品等你来拿～
+              </div>
+              <div class="mb-5 introduce-content-paragraph">
+                同时，四期全部参与的小伙伴，还会自动参与最终奖项的评选，如果您四期全部参与，且被评选后进入最终榜单，还会有神秘大奖哦～
+              </div>
             </div>
-            <div class="introduce-content-paragraph">
-              现我们真诚地邀请您来参加InsCode试用评测活动，本次试用测评活动主要分为四期，每一期都有丰厚的奖品等你来拿～
-            </div>
-            <div class="mb-5 introduce-content-paragraph">
-              同时，四期全部参与的小伙伴，还会自动参与最终奖项的评选，如果您四期全部参与，且被评选后进入最终榜单，还会有神秘大奖哦～
+            <div class="introduce-content-img-box">
+               <img class="sm:hidden md:block" src="https://csdn-665-inscode.s3.cn-north-1.jdcloud-oss.com/act/introduce-banner-pc.png/large" alt="">
+               <img class="sm:block md:hidden" src="https://csdn-665-inscode.s3.cn-north-1.jdcloud-oss.com/act/introduce-banner-mobile.png/large" alt="">
             </div>
           </div>
         </div>
@@ -215,20 +220,20 @@ const previewVisible = ref(false);
               class="grid mb-4 custom-gap xl:grid-cols-4 md:grid-cols-4 sm:grid-cols-2"
             >
               <div class="setting-content-item">
-                <img src="./assets/1@3x.png" alt="" />
+                <img src="https://csdn-665-inscode.s3.cn-north-1.jdcloud-oss.com/act/1@3x.png/large" alt="" />
               </div>
               <div class="setting-content-item">
-                <img src="./assets/2@3x.png" alt="" />
+                <img src="https://csdn-665-inscode.s3.cn-north-1.jdcloud-oss.com/act/2@3x.png/large" alt="" />
               </div>
               <div class="setting-content-item">
-                <img src="./assets/3@3x.png" alt="" />
+                <img src="https://csdn-665-inscode.s3.cn-north-1.jdcloud-oss.com/act/3@3x.png/large" alt="" />
               </div>
               <div class="setting-content-item">
-                <img src="./assets/4@3x.png" alt="" />
+                <img src="https://csdn-665-inscode.s3.cn-north-1.jdcloud-oss.com/act/4@3x.png/large" alt="" />
               </div>
             </div>
             <div>
-              <div class="annotation-line">注：1. 算力资源发放会在评奖后立即开启，不可暂停或累计，获奖的小伙伴请及时到<a class="blue" href="https://inscode.csdn.net/@inscode/Stable-Diffusion">算力页</a>畅玩大模型哦</div>
+              <div class="annotation-line">注：1. 算力资源发放会在评奖后立即开启，不可暂停或累计，获奖的小伙伴请及时到<a class="blue" href="https://inscode.csdn.net/templates">模板中心</a>畅玩大模型哦</div>
               <div class="annotation-line">2. 每参加一期活动，勋章自动升级，四期全部参加，即可获取InsCode小能手终极勋章</div>
             </div>
           </div>
@@ -250,7 +255,7 @@ const previewVisible = ref(false);
             <div class="mb-6 flow-content-title">
               活动博客参考案例 <a href="https://blog.csdn.net/2301_76740037/article/details/131332427">《可爱的头像【 InsCode Stable Diffusion 美图活动一期】》</a>， 详细要求：
               <ol class="list-decimal list-inside">
-                <li>标题：含有关键词：“InsCode Stable Diffusion 美图活动一期”，可参考【XXXX-InsCode Stable Diffusion 美图活动一期】(其中 “XXXXX”为自定义标题名称， 如 “二次元少女”，“森领奇幻钢琴家“等等</li>
+                <li>标题：含有关键词“InsCode Stable Diffusion 美图活动一期”，可参考【XXXX-InsCode Stable Diffusion 美图活动一期】(其中 “XXXXX”为自定义标题名称， 如 “二次元少女”，“森领奇幻钢琴家“等等</li>
                 <li>正文：必须包含在线运行地址（统一为https://inscode.csdn.net/@inscode/Stable-Diffusion）、模型相关版本和参数配置、图片生成提示词和反向提示词、种子和对应的图片</li>
                 <li>最后：提交博客时文章标签需添加“Stable Diffusion”，将生成的图片作为封面图，选择参加的活动 “ Stable Diffusion 美图活动一期” （一定要选择此活动才可进入活动评选哦~）<span class="cursor-pointer blue" @click="previewVisible = true">点击查看示例</span></li>
               </ol>
@@ -264,17 +269,17 @@ const previewVisible = ref(false);
               <span class="cursor-pointer qr-box blue"  @mouseover="QRCodeVisible=true" @mouseleave="QRCodeVisible=false" @click="handleShowMobile">
                 InsCode小助手 
                 <span v-show="QRCodeVisible" class="qr-box-pc">
-                  <img class="mb-2" src="./assets/QR_code.png" alt="">
+                  <img class="mb-2" src="https://csdn-665-inscode.s3.cn-north-1.jdcloud-oss.com/act/QR_code.png/large" alt="">
                   <div class="flex items-center justify-center blue" style="height: 32px;">
-                    <img src="./assets/robot.png" alt="" class="robot-logo">
+                    <img src="https://csdn-665-inscode.s3.cn-north-1.jdcloud-oss.com/act/robot.png/large" alt="" class="robot-logo">
                     <div>InsCode小助手</div> 
                   </div>
                 </span>
               </span>
               <div class="qr-box-mobile" v-show="QRCodeMobileVisible">
                 <div class="qr-box-mobile-content">
-                  <div class="flex items-center justify-center qr-box-mobile-content-title"><img src="./assets/robot.png" alt="" class="robot-logo">InsCode小助手</div>
-                  <img src="./assets/QR_code.png" alt="" />
+                  <div class="flex items-center justify-center qr-box-mobile-content-title"><img src="https://csdn-665-inscode.s3.cn-north-1.jdcloud-oss.com/act/robot.png/large" alt="" class="robot-logo">InsCode小助手</div>
+                  <img src="https://csdn-665-inscode.s3.cn-north-1.jdcloud-oss.com/act/QR_code.png/large" alt="" />
                   <div class="qr-box-mobile-content-button" @click="QRCodeMobileVisible=false">确定</div>
                 </div>
               </div>
@@ -296,8 +301,8 @@ const previewVisible = ref(false);
               2.发布博文内容的质量 占比30%
             </div>  
             <div class="mb-1 indent4f">
-              <div>是否有详细的模型使用介绍 20分</div>
-              <div>是否有对模型的深度使用 10分（比如 使用了Lora，VAE等能力）</div>
+              <div>a.是否有详细的模型使用介绍 20分</div>
+              <div>b.是否有对模型的深度使用 10分（比如 使用了Lora，VAE等能力）</div>
             </div>
             <div class="indent2f">
               3.生成图片的质量和个数 占比30%
@@ -394,7 +399,7 @@ const previewVisible = ref(false);
       }
       &-footer{
         text-align: right;
-        margin-top: 45px;
+        margin-top: 28px;
         &-button{
           display: inline-block;
           width: @previewBoxButtonW;
@@ -433,7 +438,7 @@ const previewVisible = ref(false);
     & > div {
       border-radius: 22px;
       background: #ffffff;
-      padding: 40px 10px;
+      padding: 40px 30px;
     }
   }
   .title-common {
@@ -466,13 +471,18 @@ const previewVisible = ref(false);
   }
   .indent2f{
     // padding-left: 2*@fontSize;
+    margin-bottom: 5px;
   }
   .indent4f{
-    // padding-left: 4*@fontSize;
+    padding-left: 2*@fontSize;
+    margin-bottom: 15px !important;
+    &>div{
+      margin-bottom: 5px;
+    }
   }
 
   .advertise-container {
-    background-image: url(./assets/banner1.png);
+    background-image: url(https://csdn-665-inscode.s3.cn-north-1.jdcloud-oss.com/act/banner1.png/large);
     background-repeat: no-repeat;
     background-position: top;
     background-color: rgba(195, 233, 255, 1);
@@ -484,6 +494,7 @@ const previewVisible = ref(false);
     -webkit-font-smoothing: antialiased;
     font-weight: normal;
     word-break: break-all;
+    background-size: 2560px 800px;
     a{
       .blue;
     }
@@ -560,6 +571,7 @@ const previewVisible = ref(false);
         }
       }
       .introduce {
+        padding: @boxCommonPadding;
         &-title {
           -webkit-text-stroke: 1px #fff; /* 设置镂空效果 */
           position: absolute;
@@ -577,10 +589,17 @@ const previewVisible = ref(false);
           .title-common;
         }
         &-content {
-          padding-right: @introduceW;
           &-paragraph {
             text-indent: @fontSize * 2;
             margin-bottom: 10px;
+          }
+          &-text-box{
+            padding-right: @introduceW;
+          }
+          &-img-box{
+            img{
+              width: 100%;
+            }
           }
         }
       }
@@ -754,7 +773,7 @@ const previewVisible = ref(false);
       height: @footerHeight;
       background: #ffffff;
       box-shadow: 0px 2px 20px 0px rgba(55, 165, 202, 0.35);
-      border-radius: 44px 44px 0px 0px;
+      border-radius: 24px 24px 0px 0px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -825,7 +844,7 @@ const previewVisible = ref(false);
   @font19:19px; //最大内容字体大小
   @font20:16px; //小title字体大小
   @font22:14px; //中title字体大小
-  @introduceW:220px; //活动结束宽度
+  @introduceW:0; //活动结束宽度
   @titleCommonFontSize:20px; //浮层标题字体大小
   @footerButtonSize:16px;
   @footerButtonWidth:162px;
@@ -856,25 +875,13 @@ const previewVisible = ref(false);
   }
 }
 
-@media screen and (max-width: 767px) {
-  .advertise-container .content .introduce-content {
-    padding-right: 0 !important;
-  }
-}
 @media screen and (max-width: 1100px) {
   .advertise-container {
-    background-image: url(./assets/banner_mobile.png);
+    background-image: url(https://csdn-665-inscode.s3.cn-north-1.jdcloud-oss.com/act/banner_mobile.png/large);
     background-size: contain;
   }
   .advertise-container .content {
     padding-top: 72%;
-  }
-}
-</style>
-<style>
-@media screen and (max-width: 767px) {
-  .preview-image-wrapper-container{
-    transform:translate(0px,0px) scale(0.957) !important
   }
 }
 </style>
