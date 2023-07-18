@@ -24,7 +24,7 @@ const navigates = [
   },
   {
     text: "图片展示",
-    anchor: "#exhibitImages",
+    anchor: "#explain",
     show:false
   },
   {
@@ -38,6 +38,19 @@ const navigatePosition = ref(0);
 const handleNavigate = (index) => {
   navigateActive.value = index;
 };
+const productions = [
+  {
+    name:'爱吃鱼的章鱼',
+    production:'https://img1.baidu.com/it/u=3214529205,2622974616&fm=253&fmt=auto&app=138&f=JPEG?w=281&h=500',
+    avator:'https://t7.baidu.com/it/u=1951548898,3927145&fm=193&f=GIF'
+  },
+  {
+    name:'爱吃鱼的章鱼',
+    production:'https://img.tukuppt.com/photo-big/00/00/56/6153fbf810c544118.jpg',
+    avator:'https://t7.baidu.com/it/u=1951548898,3927145&fm=193&f=GIF'
+  },
+];
+const productionVisible = ref(false);
 onMounted(() => {
   const initNavigate = () => {
     const content = document.querySelector(".content");
@@ -115,10 +128,10 @@ const previewVisible = ref(false);
       </div>
       <div class="border-common" id="introduce">
         <div class="introduce">
-          <div class="introduce-title sm:hidden md:block">
+          <div class="introduce-title sm:hidden xl:block">
             <img src="https://csdn-665-inscode.s3.cn-north-1.jdcloud-oss.com/act/introduce.png/large" alt="">
           </div>
-          <div class="introduce-title-mobile sm:block md:hidden">活动介绍</div>
+          <div class="introduce-title-mobile sm:block xl:hidden">活动介绍</div>
           <div class="introduce-content">
             <div class="introduce-content-text-box">
               <div class="introduce-content-paragraph">
@@ -334,28 +347,68 @@ const previewVisible = ref(false);
           </div>
         </div>
       </div>
+      <div    class="border-common" id="explain" v-if="productionVisible">
+        <div class="explain">
+          <div class="explain-title">作品展示</div>
+          <div class="explain-content">
+            <div
+              class="grid mb-4 explain-content-gap xl:grid-cols-5 md:grid-cols-3 sm:grid-cols-2"
+            >
+              <div class="explain-content-item" v-for="(item,index) in productions" :key="index">
+                <div class="explain-content-item-img-box">
+                  <img :src="item.production" alt="" />
+                </div>
+                <div class="explain-content-item-footer">
+                  <img :src="item.avator" alt=""> <div>{{ item.name }}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="footer">
-      <div class="mr-6 footer-button"><a href="https://inscode.csdn.net/@inscode/Stable-Diffusion">第一步：试用SD模型</a></div>
+      <div class="mr-6 footer-button"><a href="https://inscode.csdn.net/@inscode/Stable-Diffusion?utm_source=1782868685">第一步：试用SD模型</a></div>
       <div class="footer-button"><a href="https://activity.csdn.net/creatActivity?id=10496">第二步：发布博客</a></div>
     </div>
   </div>
 </template>
 
 <style scoped lang="less">
+// @font-face {
+//   font-family: "SourceHanSansCN-Normal"; /* 字体名称 */
+//   src: url("./assets/font/SourceHanSansCN-Normal.otf") format("opentype"); /* 字体文件路径和格式 */
+// }
+// @font-face {
+//   font-family: "SourceHanSansCN-Bold"; /* 字体名称 */
+//   src: url("./assets/font/SourceHanSansCN-Bold.otf") format("opentype"); /* 字体文件路径和格式 */
+// }
+// @font-face {
+//   font-family: "SourceHanSansCN-Medium"; /* 字体名称 */
+//   src: url("./assets/font/SourceHanSansCN-Regular.otf") format("opentype"); /* 字体文件路径和格式 */
+// }
+
+/* 在线链接服务仅供平台体验和调试使用，平台不承诺服务的稳定性，企业客户需下载字体包自行发布使用并做好备份。 */
 @font-face {
-  font-family: "SourceHanSansCN-Normal"; /* 字体名称 */
-  src: url("./assets/font/SourceHanSansCN-Normal.otf") format("opentype"); /* 字体文件路径和格式 */
+  font-family: "SourceHanSansCN-Normal";font-weight: 350;src: url("//at.alicdn.com/wf/webfont/kfGqAz75vP99/lCutSI6ek6fv.woff2") format("woff2"),
+  url("//at.alicdn.com/wf/webfont/kfGqAz75vP99/w4q9AZKlnk9h.woff") format("woff");
+  font-display: swap;
 }
+
+/* 在线链接服务仅供平台体验和调试使用，平台不承诺服务的稳定性，企业客户需下载字体包自行发布使用并做好备份。 */
 @font-face {
-  font-family: "SourceHanSansCN-Bold"; /* 字体名称 */
-  src: url("./assets/font/SourceHanSansCN-Bold.otf") format("opentype"); /* 字体文件路径和格式 */
+  font-family: "SourceHanSansCN-Bold";font-weight: 700;src: url("//at.alicdn.com/wf/webfont/kfGqAz75vP99/GxVmPra5hSl3.woff2") format("woff2"),
+  url("//at.alicdn.com/wf/webfont/kfGqAz75vP99/T29qZVNyJgl2.woff") format("woff");
+  font-display: swap;
 }
+
+/* 在线链接服务仅供平台体验和调试使用，平台不承诺服务的稳定性，企业客户需下载字体包自行发布使用并做好备份。 */
 @font-face {
-  font-family: "SourceHanSansCN-Medium"; /* 字体名称 */
-  src: url("./assets/font/SourceHanSansCN-Regular.otf") format("opentype"); /* 字体文件路径和格式 */
+  font-family: "SourceHanSansCN-Medium";font-weight: 500;src: url("//at.alicdn.com/wf/webfont/kfGqAz75vP99/U3tkm7KayIIa.woff2") format("woff2"),
+  url("//at.alicdn.com/wf/webfont/kfGqAz75vP99/8F2VmzdhCBLG.woff") format("woff");
+  font-display: swap;
 }
-.containermixin(@fontSize,@font18,@font19,@font20,@font22,@introduceW,@titleCommonFontSize,@footerButtonSize,@footerButtonWidth,@footerButtonHeight,@footerButtonSpace,@footerHeight,@titleCommonRadius,@borderCommonMarginBottom,@borderCommonPadding,@firstContentPadding,@customGap,@boxCommonPadding,@titleCommonWidth,@titleCommonHeight,@previewBoxWidth,@previewBoxHeight,@previewBoxButtonW,@previewBoxButtonH) {
+.containermixin(@fontSize,@font18,@font19,@font20,@font22,@introduceW,@titleCommonFontSize,@footerButtonSize,@footerButtonWidth,@footerButtonHeight,@footerButtonSpace,@footerHeight,@titleCommonRadius,@borderCommonMarginBottom,@borderCommonPadding,@firstContentPadding,@customGap,@boxCommonPadding,@titleCommonWidth,@titleCommonHeight,@previewBoxWidth,@previewBoxHeight,@previewBoxButtonW,@previewBoxButtonH,@explainGap,@explainFontSize,@explainImgW,@explainImgH) {
   .preview-box{
     position:fixed;
     top: 0;
@@ -482,7 +535,7 @@ const previewVisible = ref(false);
   }
 
   .advertise-container {
-    background-image: url(https://csdn-665-inscode.s3.cn-north-1.jdcloud-oss.com/act/banner1.png/large);
+    background-image: url(./assets/banner1.png);
     background-repeat: no-repeat;
     background-position: top;
     background-color: rgba(195, 233, 255, 1);
@@ -670,6 +723,51 @@ const previewVisible = ref(false);
           }
         }
       }
+      .explain{
+        &-title{
+          .title-common
+        }
+        &-content{
+          &-gap{
+            gap:@explainGap;
+          }
+          &-item{
+            border-radius: 10px;
+            border: 2px solid #77A1F7;
+            &-img-box{
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              height: 300px;
+              img{
+                max-width: 100%;
+                max-height: 100%;
+              }
+            }
+            &-footer{
+              display: flex;
+              align-items: center;
+              padding: 16px 8px;
+              height: 48px;
+              background: #77A1F7;
+              box-shadow: 0px 6px 10px 0px rgba(120,162,247,0.5);
+              font-size: @explainFontSize;
+              font-family: SourceHanSansCN-Medium, SourceHanSansCN;
+              font-weight: 500;
+              color: #FFFFFF;
+              border-radius: 0 0 5px 5px;
+              img{
+                margin-right: 8px;
+                width: @explainImgW;
+                height: @explainImgH;
+                border: 1px solid #FFFFFF;
+                border-radius: 16px;
+              }
+            }
+          }
+        }
+        
+      }
       .flow {
         padding: @boxCommonPadding;
         .qr-box{
@@ -833,7 +931,11 @@ const previewVisible = ref(false);
   @previewBoxHeight:550px;
   @previewBoxButtonW:96px;
   @previewBoxButtonH:32px;
-  .containermixin(@fontSize,@font18,@font19,@font20,@font22,@introduceW,@titleCommonFontSize,@footerButtonSize,@footerButtonWidth,@footerButtonHeight,@footerButtonSpace,@footerHeight,@titleCommonRadius,@borderCommonMarginBottom,@borderCommonPadding,@firstContentPadding,@customGap,@boxCommonPadding,@titleCommonWidth,@titleCommonHeight,@previewBoxWidth,@previewBoxHeight,@previewBoxButtonW,@previewBoxButtonH);
+  @explainGap:24px;
+  @explainFontSize:16px;
+  @explainImgW:32px;
+  @explainImgH:32px;
+  .containermixin(@fontSize,@font18,@font19,@font20,@font22,@introduceW,@titleCommonFontSize,@footerButtonSize,@footerButtonWidth,@footerButtonHeight,@footerButtonSpace,@footerHeight,@titleCommonRadius,@borderCommonMarginBottom,@borderCommonPadding,@firstContentPadding,@customGap,@boxCommonPadding,@titleCommonWidth,@titleCommonHeight,@previewBoxWidth,@previewBoxHeight,@previewBoxButtonW,@previewBoxButtonH,@explainGap,@explainFontSize,@explainImgW,@explainImgH);
   .advertise-container .content .setting .annotation-line:last-child{
     padding-left: 28px;
   }
@@ -863,7 +965,11 @@ const previewVisible = ref(false);
   @previewBoxHeight:419px;
   @previewBoxButtonW:232px;
   @previewBoxButtonH:42px;
-  .containermixin(@fontSize,@font18,@font19,@font20,@font22,@introduceW,@titleCommonFontSize,@footerButtonSize,@footerButtonWidth,@footerButtonHeight,@footerButtonSpace,@footerHeight,@titleCommonRadius,@borderCommonMarginBottom,@borderCommonPadding,@firstContentPadding,@customGap,@boxCommonPadding,@titleCommonWidth,@titleCommonHeight,@previewBoxWidth,@previewBoxHeight,@previewBoxButtonW,@previewBoxButtonH);
+  @explainGap:15px;
+  @explainFontSize:14px;
+  @explainImgW:20px;
+  @explainImgH:20px;
+  .containermixin(@fontSize,@font18,@font19,@font20,@font22,@introduceW,@titleCommonFontSize,@footerButtonSize,@footerButtonWidth,@footerButtonHeight,@footerButtonSpace,@footerHeight,@titleCommonRadius,@borderCommonMarginBottom,@borderCommonPadding,@firstContentPadding,@customGap,@boxCommonPadding,@titleCommonWidth,@titleCommonHeight,@previewBoxWidth,@previewBoxHeight,@previewBoxButtonW,@previewBoxButtonH,@explainGap,@explainFontSize,@explainImgW,@explainImgH);
   .advertise-container .content .arrange{
     padding:40px 10px;
   }
